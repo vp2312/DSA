@@ -7,7 +7,6 @@ class Solution{
 
   public:
 	int minDifference(int arr[], int n)  { 
-	   // int n=nums.size();
 	   vector<int> nums;
 	   for(int i=0;i<n;i++)
 	   {
@@ -18,12 +17,9 @@ class Solution{
         {
             sum+=j;
         }
-        // if(sum%2!=0) return false;
-        // bool t[n+1][sum/2+1];
         float mid=sum/2.0;
         int ans= solve(nums,n, sum/2);
-        // cout<<mid<<"vvvv"<<(mid-ans)*2;
-         return (mid-ans)*2;  
+        return (mid-ans)*2;  
         
     }
 private :
@@ -55,28 +51,15 @@ private :
                 }
             }
         }
-        // for(int i=0;i<n+1;i++)
-        // {
-        //     for(int j=0;j<sum+1;j++)
-        //     {
-        //         cout<<t[i][j]<<" ";
-        //     }
-        //     cout<<endl;
-        // }
-    
         for(int i=sum;i>=0;i--)
         {
             if(t[n][i]==true)
             {
-                // cout<<i;
                 return i;
                 
             }
-            // else return 0;
         }
          return 0;
-        // return t[n][sum];
-	    // Your code goes here
 	} 
 };
 
