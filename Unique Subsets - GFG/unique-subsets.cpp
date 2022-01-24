@@ -19,23 +19,8 @@ class Solution
         {
             subs.push_back(e);
         }
-        sort(subs.begin(), subs.end());
-        
-        
+        // sort(subs.begin(), subs.end());
         return subs;
-        // int cnt=0;
-        // vector<int> op;
-        // op.clear();
-        
-        // mp.clear();
-        // vector<vector<int>> v;
-        // solve(arr,op,mp,cnt);
-        // for(auto e: mp)
-        // {
-        //     v.push_back(e);
-        // }
-        // sort(v.begin(), v.end());
-        // return v;
         
     }
     public:
@@ -57,24 +42,6 @@ class Solution
         subsets(nums,cnt+1, temp2, subs,mp);
         return;
     }
-    //Function to find all possible unique subsets.
-    // void solve(vector<int> ip,vector<int> op,set<vector<int>>& mp, int cnt)
-    // {
-    //     if(ip.size()==cnt)
-    //     {
-    //         sort(op.begin(),op.end());
-    //         mp.insert(op);
-    //         return;
-    //     }
-    //     vector<int> op1=op;
-    //     vector<int> op2=op;
-    //     op2.push_back(ip[cnt]);
-    //     // ip.erase(ip.begin()+0);
-    //     solve(ip,op1,mp,cnt+1);
-    //     solve(ip,op2,mp,cnt+1);
-    //     return;
-    
-    // }
 };
 
 // { Driver Code Starts.
