@@ -18,8 +18,6 @@ public:
         solve(a,x,ptr,v);
         sort(v.begin(),v.end());
         return v;
-        // void solve(a,ptr,v,vec);
-        //code here
     }
 private:
     void solve(vector<int>& ip, vector<int>& op, int cnt, vector<vector<int>>& ans)
@@ -29,18 +27,12 @@ private:
             ans.push_back(op);
             return ;
         }
-        
         vector<int> m(op);
         vector<int> n(op);
         n.push_back(ip[cnt]);
         solve(ip,m,cnt+1,ans);
         solve(ip,n,cnt+1,ans);
         return;
-        
-        // vector<vector<int> v;
-        // int ptr=0;
-        // void solve(a,ptr,v,vec);
-        //code here
     }
 };
 
