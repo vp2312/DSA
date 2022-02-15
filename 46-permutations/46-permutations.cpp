@@ -1,9 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> permute(vector<int>& nums) {
-          // Code here there
      vector<vector<int>> ans;
-     // string ip = S;
      vector<int> op ;
      solve(nums,op,ans);
      sort(ans.begin(), ans.end());
@@ -12,11 +10,9 @@ public:
 private:
 
    void solve(vector<int> ip, vector<int> op, vector<vector<int>>& ans){
-       // cout<<"ip is->"<<ip<<" "<<"op is->"<<op<<endl;
         int n = ip.size();
         if(n == 0){
             ans.push_back(op);
-            cout<<"......"<<endl;
             return;
         }
         for(int i = 0;i<n;i++){
@@ -27,6 +23,5 @@ private:
             solve(ip1,op1,ans);
         }
         return;
-        
     }
 };
