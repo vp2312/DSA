@@ -16,7 +16,7 @@ public:
             return head;
         }
         ListNode *ans=reverseList(head->next);
-        ListNode *cur= head->next;
+        // ListNode *cur= head->next;
         head->next->next=head;
         head->next=NULL;
         return ans;
