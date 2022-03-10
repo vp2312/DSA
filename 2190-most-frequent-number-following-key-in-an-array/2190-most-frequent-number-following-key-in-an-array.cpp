@@ -1,19 +1,12 @@
 class Solution {
 public:
     int mostFrequent(vector<int>& nums, int key) {
-        map<int, int> mp;
+        unordered_map<int, int> mp;
         for(int i=0;i<nums.size()-1;i++)
         {
             if(nums[i]==key)
             {
-                if(mp.find(nums[i+1])==mp.end())
-                {
-                    mp[nums[i+1]]=1;
-                }
-                else
-                {
                     mp[nums[i+1]]++;
-                }
             }
         }
         // for(auto j: mp)
