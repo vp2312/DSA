@@ -16,15 +16,15 @@ public:
                 }
             }
         }
-        for(auto j: mp)
-        {
-            cout<<j.first<<"->"<<j.second<<endl;
-            // if(j.second > ans)
-            // {
-            //     ans=j.first;
-            //     // cout<< j.second<<" ...";
-            // }
-        }
+        // for(auto j: mp)
+        // {
+        //     cout<<j.first<<"->"<<j.second<<endl;
+        //     // if(j.second > ans)
+        //     // {
+        //     //     ans=j.first;
+        //     //     // cout<< j.second<<" ...";
+        //     // }
+        // }
         int ans=INT_MIN;
         int ans2;
         for(auto j: mp)
@@ -33,7 +33,7 @@ public:
             {
                 ans=j.second;
                 ans2=j.first;
-                cout<< j.second<<" ...";
+                // cout<< j.second<<" ...";
             }
         }
         
