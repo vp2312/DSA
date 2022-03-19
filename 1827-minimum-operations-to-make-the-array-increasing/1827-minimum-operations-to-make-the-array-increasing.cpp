@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int minOperations(vector<int>& nums) {
+        int ans=0;
+        for(int i=1;i<nums.size();i++)
+        {
+            int diff= nums[i]-nums[i-1];
+            if(diff<1)
+            {
+               
+                ans+= (nums[i-1]+1-nums[i]);
+                nums[i]= (nums[i-1]+1);
+            }
+        }
+        
+        return ans;
+        
+    }
+};
