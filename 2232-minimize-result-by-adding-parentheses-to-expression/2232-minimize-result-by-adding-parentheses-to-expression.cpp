@@ -2,7 +2,8 @@ class Solution {
 public:
     string minimizeResult(string expr) {
         int pos;
-        // int dp[]
+        int dp[11][11];
+        memset(dp,-1,sizeof(dp));
         map<string, int> mp;
         for(int i=0;i<expr.size();i++)
         {
@@ -13,7 +14,7 @@ public:
         }
         int sp= pos-1;
         int ep= pos+1;
-        solve(expr,sp,ep,pos,mp);
+        solve(expr,sp,ep,pos,mp,dp);
         int k=1;
         int val=INT_MAX;
         string sns="";
@@ -30,9 +31,13 @@ public:
     }
     
     
-    static void solve( string expr,int sp, int ep,int pos,map<string, int>& mp)
+    static void solve( string expr,int sp, int ep,int pos,map<string, int>& mp,int dp[11][11])
     {
         if(sp==-1 || ep==expr.size())
+        {
+            return ;
+        }
+        if(dp[sp][ep]==1)
         {
             return ;
         }
@@ -96,10 +101,11 @@ public:
         }
         // cout<<str<<" "<<p1<<" "<<(s1+s2)<<" "<<p2<<" "<<val<<endl;
         mp.insert({str,val});
+        dp[sp][ep]=1;
         
-        solve(expr,sp-1,ep,pos,mp);
-        solve(expr,sp,ep+1,pos,mp);
-        solve(expr,sp-1,ep+1,pos,mp);
+        solve(expr,sp-1,ep,pos,mp,dp);
+        solve(expr,sp,ep+1,pos,mp,dp);
+        solve(expr,sp-1,ep+1,pos,mp,dp);
     }
     
 };
