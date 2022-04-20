@@ -2,6 +2,7 @@ class Solution {
 public:
     string minimizeResult(string expr) {
         int pos;
+        // int dp[]
         map<string, int> mp;
         for(int i=0;i<expr.size();i++)
         {
@@ -23,7 +24,7 @@ public:
                 sns=j.first;
                 val=j.second;
             }
-            cout<<j.first<<" "<<j.second<<endl;
+            // cout<<j.first<<" "<<j.second<<endl;
         }
         return sns;
     }
