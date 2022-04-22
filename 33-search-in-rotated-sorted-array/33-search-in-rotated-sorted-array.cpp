@@ -7,19 +7,10 @@ public:
 	    int ind;
 	    while(lo<=hi)
 	    {
-            // if(arr[lo]<=arr[hi])
-            // {
-            //     return arr[lo];
-            // }
-            
-            
 	        int mid= lo+ (hi-lo)/2 ;
-	        // int prev= (mid+n-1)%n;
-	        // int nxt= (mid+1)%n;
 	        if(arr[mid]==x)
 	        {
 	            return mid;
-	        
 	        }
 	        else
 	        {
@@ -49,12 +40,7 @@ public:
                     
                 }
 	        }
-	        // else /*if(arr[mid]<= arr[hi])*/
-	        // {
-	        //     lo=mid+1;
-	        // }
 	    }
-	    // cout<<ind<<endl;
 	    return -1;
         
     }
