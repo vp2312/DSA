@@ -127,10 +127,34 @@ struct Node
  */
 
 //Function to return a list containing elements of left view of the binary tree.
-static void printt(map<int,int>& mp, Node *root, int level)
+// static void printt(map<int,int>& mp, Node *root, int level)
+// {
+//     if(root==NULL)  return;
+//     if(mp.find(level)==mp.end())   mp[level]=root->data;
+    
+//     printt(mp,root->left,level+1);
+//     printt(mp,root->right,level+1);
+//     return;
+// }
+// vector<int> leftView(Node *root)
+// {
+//     map<int,int> mp;
+//     vector<int> ans;
+    
+//     // memset(mp,-999,sizeof(mp));
+//     printt(mp,root,0);
+    
+//     for(auto j:mp)
+//     {
+//         ans.push_back(j.second);
+//     }
+//     return ans;
+//   // Your code here
+// }
+static void printt(vector<int>& mp, Node *root, int level)
 {
     if(root==NULL)  return;
-    if(mp.find(level)==mp.end())   mp[level]=root->data;
+    if(mp.size()<level)   mp.push_back(root->data);
     
     printt(mp,root->left,level+1);
     printt(mp,root->right,level+1);
@@ -138,19 +162,18 @@ static void printt(map<int,int>& mp, Node *root, int level)
 }
 vector<int> leftView(Node *root)
 {
-    map<int,int> mp;
+    // map<int,int> mp;
     vector<int> ans;
     
     // memset(mp,-999,sizeof(mp));
-    printt(mp,root,0);
+    printt(ans,root,1);
     
-    for(auto j:mp)
-    {
-        ans.push_back(j.second);
-    }
+    // for(auto j:mp)
+    // {
+    //     ans.push_back(j.second);
+    // }
     return ans;
    // Your code here
 }
-
 
 
