@@ -21,22 +21,11 @@ public:
             {
                 if(mp[sec]>0)
                 {
-                    
                     cnt++;
                     mp[sec]--;
-                    
                     // cout<<j<<" "<<sec<<" "<<endl;
-                    
-                }
-                // else
-                // {
-                //      mp[j]++;
-                // }    
+                }  
             }
-            // else
-            // {
-            //      mp[j]++;
-            // }
         }
         // cout<<endl;
         return cnt;
