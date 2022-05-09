@@ -63,59 +63,31 @@ class Solution
         Node *newhead=reverseList(head);
         
         Node *curr=newhead,*start=head;
-        while(curr/*curr->next!=NULL*/)
+        if(curr->data <9)
         {
-            // if(curr==newhead)
-            // {
-                if(curr->data <9)
-                {
-                    curr->data=curr->data +1;
-                    Node *hed=reverseList(newhead);
-                    return hed;
-                    // return head;
-                }
-                else
-                {
-                    while(curr->next && curr->data== 9)
-                    {
-                        curr->data=0;
-                        curr=curr->next;
-                    }
-                    // curr->data=0;
-                    curr->data=curr->data +1;
-                    Node *hed=reverseList(newhead);
-                    return hed;
-                    
-                }
+            curr->data=curr->data +1;
+            Node *hed=reverseList(newhead);
+            return hed;
+        }
+        else
+        {
+            while( curr->next && curr->data== 9)
+            {
+                curr->data=0;
+                curr=curr->next;
             }
+            curr->data=curr->data +1;
+            if(curr->data ==10) 
+            {
+                curr->data=0;
+                Node *x= new Node(1);
+                curr->next=x;
+            }
+            Node *hed=reverseList(newhead);
+            return hed;
             
-        // }
-        // if(curr->data <9)
-        // {
-        //     curr->data=curr->data +1;
-        //     return head;
-        // }
-        // else
-        // {
-        //     while(start)
-        //     {
-        //         if(start->data !=9)
-        //         {
-        //             start->data=start->data +1;
-        //         }
-        //         else
-        //         {
-        //             start->data=0;
-        //         }
-        //         start=start->next;
-        //     }
-        // }
+        }
         return head;
-        
-        
-        
-        // Your Code here
-        // return head of list after adding one
     }
 };
 
