@@ -15,21 +15,26 @@ public:
         {
             return head;
         }
-        ListNode *ans=reverseList(head->next);
-        // ListNode *cur= head->next;
-        head->next->next=head;
-        head->next=NULL;
-        return ans;
-            
-        // ListNode *prev=NULL, *curr=head , *temp ;
-        // while(curr)
-        // {
-        //     temp=curr->next;
-        //     curr->next=prev;
-        //     prev=curr;
-        //     curr=temp;
-        // }
-        // return prev;
+        // ListNode *ans=reverseList(head->next);
+        // // ListNode *cur= head->next;
+        // head->next->next=head;
+        // head->next=NULL;
+        // return ans;
+        
+        
+        ListNode *curr=head;
+        ListNode *dummy= new ListNode(-1);
+        ListNode *prev=dummy, *temp;
+        
+        while(curr)
+        {
+            temp=curr->next;
+            curr->next=prev->next;
+            prev->next=curr;
+            curr=temp;
+        }
+        
+        return prev->next;
         
     }
 };
