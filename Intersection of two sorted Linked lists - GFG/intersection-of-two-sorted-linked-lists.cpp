@@ -103,10 +103,10 @@ Node* findIntersection(Node* h1, Node* h2)
             Node *temp= new Node(c1->data);
             prev->next=temp;
             prev=prev->next;
-            // c1=c1->next;
-            // c2=c2->next;
-            while(c1 && c1->data==prev->data)   c1=c1->next;
-            while(c2 && c2->data==prev->data)   c2=c2->next;
+            c1=c1->next;
+            c2=c2->next;
+            // while(c1 && c1->data==prev->data)   c1=c1->next;
+            // while(c2 && c2->data==prev->data)   c2=c2->next;
         }
         
     }
