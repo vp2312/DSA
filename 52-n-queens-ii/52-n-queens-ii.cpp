@@ -33,11 +33,12 @@ public:
         return true;
     }
     public:
-    void solve(int col,vector<string> &board,  vector<vector<string>> &ans, int n)
+    void solve(int col,vector<string> &board,  int &ans, int n)
     {
         if(col==n)
         {
-            ans.push_back(board);
+            // ans.push_back(board);
+            ans++;
             return;
         }
         
@@ -54,7 +55,7 @@ public:
     public:
    
     int totalNQueens(int n) {
-         vector<vector<string>> ans;
+         int ans=0;
         vector<string>  board(n);   //ERROR POINT n initialization
         string s(n,'.');
         
@@ -66,7 +67,7 @@ public:
         solve(0,board,ans,n);
         
         
-        return ans.size();
+        return ans;
         
         
     }
