@@ -14,16 +14,16 @@ class Solution
     //Function to find maximum of each subarray of size k.
     vector <int> max_of_subarrays(int *nums, int n, int k)
     {
-         vector<int> output;
+        vector<int> output;
         int i=0;
         int j=0;
         list<int> l;
         while(j<n)
         {
-            if(l.empty()){ 
-                l.push_back(nums[j]);   
-            }
-            else
+            // if(l.empty()){ 
+            //     l.push_back(nums[j]);   
+            // }
+            // else
             {
                 while(!l.empty() && l.back()<nums[j])
                     l.pop_back();
