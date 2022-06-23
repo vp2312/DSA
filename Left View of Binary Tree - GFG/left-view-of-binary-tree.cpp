@@ -162,18 +162,9 @@ static void printt(vector<int>& mp, Node *root, int level)
 }
 vector<int> leftView(Node *root)
 {
-    // map<int,int> mp;
     vector<int> ans;
-    
-    // memset(mp,-999,sizeof(mp));
     printt(ans,root,1);
-    
-    // for(auto j:mp)
-    // {
-    //     ans.push_back(j.second);
-    // }
     return ans;
-   // Your code here
 }
 
 
