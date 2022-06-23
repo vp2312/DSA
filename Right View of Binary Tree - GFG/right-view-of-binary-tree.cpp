@@ -40,13 +40,10 @@ struct Node
 class Solution
 {
     public:
-    //Function to return list containing elements of right view of binary tree.
     static void printt(vector<int>& mp, Node *root, int level)
     {
         if(root==NULL)  return;
         if(mp.size()<level)   mp.push_back(root->data);
-        
-        
         printt(mp,root->right,level+1);
         printt(mp,root->left,level+1);
         return;
@@ -54,16 +51,8 @@ class Solution
     vector<int> rightView(Node *root)
     {
         vector<int> ans;
-    
-        // memset(mp,-999,sizeof(mp));
         printt(ans,root,1);
-        
-        // for(auto j:mp)
-        // {
-        //     ans.push_back(j.second);
-        // }
         return ans;
-           // Your Code here
     }
 };
 
