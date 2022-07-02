@@ -11,27 +11,20 @@
 class Solution {
 public:
     TreeNode* getTargetCopy(TreeNode* original, TreeNode* cloned, TreeNode* target) {
-//         if(!root)   
-            
-//         if(original->data== target->data)   return target;
         TreeNode* ans;
-        
-        preorder(original,cloned,ans, target);
+        preorder(cloned,ans, target);
         return ans;
-        
-        
     }
-    void preorder(TreeNode* ori, TreeNode* dup ,TreeNode* & ans , TreeNode* target)
+    void preorder(TreeNode* dup ,TreeNode* & ans , TreeNode* target)
     {
-        if(!ori && !dup)    return ;
+        if(!dup)    return ;
         
         if(target->val==dup->val){
             ans=dup;
             return ;
         }    
-        
-        preorder(ori->left,dup->left, ans,target);
-        preorder(ori->right,dup->right, ans,target);
+        preorder(dup->left, ans,target);
+        preorder(dup->right, ans,target);
 
         return;
     }
