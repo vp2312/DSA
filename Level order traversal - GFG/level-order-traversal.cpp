@@ -45,8 +45,8 @@ class Solution
     vector<int> levelOrder(Node* node)
     {
         vector<int> ans;
-        if(node == NULL) return ans;
-        queue<Node*> q;
+        // if(node == NULL) return ans;
+        queue<Node*> q ;
         q.push(node);
         while(!q.empty())
         {
