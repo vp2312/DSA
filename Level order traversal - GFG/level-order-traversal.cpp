@@ -50,16 +50,16 @@ class Solution
         q.push(node);
         while(!q.empty())
         {
-            int s=q.size();
+            // int s=q.size();
             // vector<int> level;
-            for(int i=0;i<s;i++)
-            {
+            // for(int i=0;i<s;i++)
+            // {
                 Node *node=q.front();
                 q.pop();
                 if(node->left!=NULL) q.push(node->left);
                 if(node->right!=NULL) q.push(node->right);
                 ans.push_back(node->data);
-            }
+            // }
             // ans.push_back(level);
         }
         return ans;
